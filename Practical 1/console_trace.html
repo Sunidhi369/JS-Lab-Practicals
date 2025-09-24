@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>The console object</h1>
+    <h2>The trace() Method</h2>
+    <p>Clicking "Start Trace" calls function, which calls another function, which calls console.trace(),which displsys the trace in the console,</p>
+    <p>Remember to open the console (Press F12) before you click "Start Trace".</p>
+    <button onclick="myFunction()">Start Trace</button>
+    
+<script>
+    function myFunction() {
+        myOtherFunction();
+    }
+    function myOtherFunction() {
+        console.trace();
+    }
+</script>
+</body>
+</html>

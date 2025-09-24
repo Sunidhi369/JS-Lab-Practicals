@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>for...of Loop Example</title>
+</head>
+<body>
+    <h2>Subjects:</h2>
+    <div id="output"></div>
+    <script>
+        let subjects = ["Maths", "Science", "English", "History"];
+        let result = "";
+        for (let subject of subjects) {
+            result += subject + "<br>";
+        }
+        document.getElementById("output").innerHTML = result;
+    </script>
+    
+</body>
+</html>     

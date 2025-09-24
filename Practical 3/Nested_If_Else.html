@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nested If Else Example</title>
+</head>
+<body>
+    <h2>Check Number Type</h2>
+    <label for="num">Enter a number:</label>
+    <input type="number" id="num">
+    <button onclick="checkNumber()">Check</button>
+
+    <b>Result is :- </b> <input type="text" size="30" id="output" >
+
+    <p id="output"></p>
+    <script>
+        function checkNumber() {
+            let number = parseFloat(document.getElementById("num").value);
+            let result = "";
+            if (number > 0) {
+                result = "The number is positive.";
+            } else{
+                if (number < 0) {
+                    result = "The number is negative.";
+                } else {
+                    result = "The number is zero.";
+                }
+
+            }
+
+            document.getElementById("output").value = result;
+        }
+    </script>
+</body>
+</html>

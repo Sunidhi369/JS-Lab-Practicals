@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>for Each Loop </title>
+</head>
+<body>
+    <h2>List of Fruits:</h2>
+    <div id="output"></div>
+    <script>
+        let fruits = ["Apple","Banana","Mango","Orange"];
+        let result = "";
+        fruits.forEach(function(fruit, index) {
+            result += (index + 1) + ". " + fruit + "<br>";
+        });
+
+        document.getElementById("output").innerHTML = result;
+    </script>
+</body>
+</html>

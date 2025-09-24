@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Try Catch Example</title>
+</head>
+<body>
+    <h2>Simple Try...Catch Program</h2>
+    <p id="output"></p>
+    <script>
+        try {
+            //This will cause an error
+            let result = x + 10; //x is not defined
+            document.getElementById("output").innerHTML = result;
+        } catch (error) {
+            document.getElementById("output").innerHTML = " error caught: " + error.message;
+        }
+        </script>
+</body>
+</html>

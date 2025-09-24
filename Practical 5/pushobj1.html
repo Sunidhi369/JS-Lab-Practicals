@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>puch() Example with Objects</title>
+    </head>
+    <body>
+        <script>
+            var students = [
+                { name: "Alice", age: 20 },
+                { name: "Bob", age: 22 }
+            ];
+
+            students.push({ name: "Charlie", age: 23 });
+            students.push({ name: "David", age: 24 });
+
+            for(var i=0; i < students.length; i++) {
+                document.write("Name: " + students[i].name + ", Age: " + students[i].age + "<br>");
+            }   
+        </script>
+    </body>
+</html>
