@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Admission Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>🏋️‍♂️ Gym Admission Form</h2>
+    <p class="subtitle">Fill out your details to join our fitness community!</p>
+
+    <form id="gymForm">
+      <label>Full Name <span>*</span></label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+
+      <label>Age <span>*</span></label>
+      <input type="number" id="age" min="10" max="80" placeholder="Enter your age" required>
+
+      <label>Gender <span>*</span></label>
+      <div class="gender">
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+      </div>
+
+      <label>Email <span>*</span></label>
+      <input type="email" id="email" placeholder="Enter your email address" required>
+
+      <label>Phone Number <span>*</span></label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+
+      <label>Eye Color</label>
+      <select id="eyeColor">
+        <option value="">Select</option>
+        <option value="Brown">Brown</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+        <option value="Gray">Gray</option>
+      </select>
+
+      <label>Height (in cm)</label>
+      <input type="number" id="height" min="100" max="250" placeholder="Enter your height">
+
+      <label>Weight (in kg)</label>
+      <input type="number" id="weight" min="30" max="200" placeholder="Enter your weight">
+
+      <label>Fitness Goals</label>
+      <div class="checkboxes">
+        <label><input type="checkbox" value="Weight Loss"> Weight Loss</label>
+        <label><input type="checkbox" value="Muscle Gain"> Muscle Gain</label>
+        <label><input type="checkbox" value="Stamina"> Improve Stamina</label>
+        <label><input type="checkbox" value="Flexibility"> Flexibility</label>
+      </div>
+
+      <label>Describe your current fitness level</label>
+      <textarea id="fitnessLevel" rows="3" placeholder="e.g., Beginner, Intermediate, Advanced..."></textarea>
+
+      <div class="agree">
+        <input type="checkbox" id="agree" required>
+        <label for="agree">I agree to the terms & conditions</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

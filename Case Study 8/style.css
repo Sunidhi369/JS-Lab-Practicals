@@ -1,0 +1,100 @@
+body {
+  background: linear-gradient(135deg, #c8e6ff, #e3f2fd);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  background: white;
+  width: 450px;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  text-align: center;
+  color: #1565c0;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  color: #0d47a1;
+  font-weight: 500;
+}
+
+span {
+  color: red;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #90caf9;
+  border-radius: 6px;
+  margin-top: 4px;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1565c0;
+  box-shadow: 0 0 5px rgba(21, 101, 192, 0.4);
+  outline: none;
+}
+
+.gender, .checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.agree {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0d47a1;
+}
+
+#output {
+  margin-top: 20px;
+  background: #f0f8ff;
+  padding: 15px;
+  border-left: 4px solid #1565c0;
+  border-radius: 8px;
+  display: none;
+}

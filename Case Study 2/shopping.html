@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIT Mart - Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🛍️ Welcome to BlinkMart</h1>
+    <p>Pick your favorite gadgets from our latest collection!</p>
+
+    <div class="product-list">
+      <!-- Product 1 -->
+      <div class="product">
+        <img src="images/pexels-cottonbro-3945667.jpg" alt="Bluetooth Headphones">
+        <h2>Bluetooth Headphones</h2>
+        <p>Price: ₹ <span class="price">999</span></p>
+        <label>Quantity:</label>
+        <input type="number" class="quantity" min="0" placeholder="Enter quantity">
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product">
+        <img src="images/realistic-fitness-tracker-illustration_23-2148521366.jpg" alt="Smartwatch">
+        <h2>Smartwatch</h2>
+        <p>Price: ₹ <span class="price">1999</span></p>
+        <label>Quantity:</label>
+        <input type="number" class="quantity" min="0" placeholder="Enter quantity">
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product">
+        <img src="images/laptop-5673901_960_720.jpg" alt="Laptop">
+        <h2>Laptop</h2>
+        <p>Price: ₹ <span class="price">49999</span></p>
+        <label>Quantity:</label>
+        <input type="number" class="quantity" min="0" placeholder="Enter quantity">
+      </div>
+    </div>
+
+    <button onclick="calculateTotal()">Calculate Total Bill</button>
+    <div id="result"></div>
+  </div>
+</body>
+</html>

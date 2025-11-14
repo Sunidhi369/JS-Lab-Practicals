@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign Up Form — SIT Mart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="card-header">
+        <div class="mandatory">* Mandatory to fill</div>
+        <h1>Registration Form</h1>
+      </div>
+
+      <form id="signupForm" novalidate>
+        <div class="grid">
+
+          <label class="field">
+            <span>Firstname *</span>
+            <input type="text" id="fname" name="fname" required />
+            <small class="error" id="err-fname"></small>
+          </label>
+
+          <label class="field">
+            <span>Lastname</span>
+            <input type="text" id="lname" name="lname" />
+            <small class="error" id="err-lname"></small>
+          </label>
+
+          <label class="field birthday">
+            <span>Birthday *</span>
+            <div class="birthday-row">
+              <select id="day" aria-label="Day"></select>
+              <select id="month" aria-label="Month"></select>
+              <select id="year" aria-label="Year"></select>
+            </div>
+            <small class="error" id="err-birthday"></small>
+          </label>
+
+          <label class="field">
+            <span>Username *</span>
+            <input type="text" id="username" name="username" required />
+            <small class="error" id="err-username"></small>
+          </label>
+
+          <label class="field">
+            <span>E-mail *</span>
+            <input type="email" id="email" name="email" required />
+            <small class="error" id="err-email"></small>
+          </label>
+
+          <label class="field">
+            <span>Website</span>
+            <input type="url" id="website" name="website" placeholder="https://example.com" />
+            <small class="error" id="err-website"></small>
+          </label>
+
+          <label class="field">
+            <span>Password *</span>
+            <input type="password" id="password" name="password" required minlength="6" />
+            <small class="error" id="err-password"></small>
+          </label>
+
+          <label class="field">
+            <span>Re-password *</span>
+            <input type="password" id="repassword" name="repassword" required minlength="6" />
+            <small class="error" id="err-repassword"></small>
+          </label>
+
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="terms" />
+          <label for="terms">I agree to the terms &amp; conditions *</label>
+          <small class="error" id="err-terms"></small>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Sign Up</button>
+        </div>
+
+        <div id="formMessage" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

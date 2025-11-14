@@ -1,0 +1,98 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #e0eafc, #cfdef3);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: white;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  text-align: center;
+}
+
+h1 {
+  color: #004aad;
+}
+
+p {
+  color: #333;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.product {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product h2 {
+  font-size: 20px;
+  color: #0a3d91;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #004aad;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0070f3;
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0a3d91;
+}
