@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Traffic Signal</title>
+    <style>
+      /* Very simple beginner-level CSS */
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .traffic-light {
+        width: 100px;
+        background-color: black;
+        padding: 10px;
+        border-radius: 20px;
+        margin: auto;
+      }
+
+      .light {
+        width: 60px;
+        height: 60px;
+        margin: 10px auto;
+        border-radius: 50%;
+        background-color: grey;
+      }
+
+      .on {
+        box-shadow: 0 0 20px white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Traffic Signal</h2>
+
+    <div class="traffic-light">
+      <div id="red" class="light"></div>
+      <div id="yellow" class="light"></div>
+      <div id="green" class="light"></div>
+    </div>
+
+    <script>
+      // Simple JavaScript traffic signal logic
+      document.addEventListener("DOMContentLoaded", function () {
+        const lights = ["red", "yellow", "green"];
+        let index = 0;
+
+        function changeLight() {
+          // Turn off all lights
+          lights.forEach((id) => {
+            document.getElementById(id).style.backgroundColor = "grey";
+          });
+
+          // Turn on the current light
+          const current = lights[index];
+          if (current === "red")
+            document.getElementById(current).style.backgroundColor = "red";
+          else if (current === "yellow")
+            document.getElementById(current).style.backgroundColor = "yellow";
+          else if (current === "green")
+            document.getElementById(current).style.backgroundColor = "green";
+
+          // Move to next light
+          index = (index + 1) % lights.length;
+        }
+
+        // Change light every 2 seconds
+        setInterval(changeLight, 2000);
+
+        // Start immediately
+        changeLight();
+      });
+    </script>
+  </body>
+</html>

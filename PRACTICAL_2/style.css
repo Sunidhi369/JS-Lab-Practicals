@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: thistle;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.billing {
+  margin-top: 20px;
+  text-align: center;
+}
+.billing button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.item {
+  width: 200px;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.item input {
+  margin-top: 10px;
+  width: 100%;
+}

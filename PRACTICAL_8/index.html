@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Admission Form</title>
+    <style>
+      /* Warm and aesthetic CSS with light yellow & orange hues */
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        background: linear-gradient(135deg, #fff7d1, #ffd88d);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .form-container {
+        background-color: #fffefa;
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+        width: 350px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #e67e22;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      label {
+        display: block;
+        margin-top: 12px;
+        font-size: 14px;
+        color: #444;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+
+      input:focus {
+        border-color: #ff9900;
+        outline: none;
+        box-shadow: 0 0 6px rgba(255, 153, 0, 0.4);
+      }
+
+      small {
+        color: #e74c3c;
+        font-size: 12px;
+        display: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 18px;
+        background-color: #ffa31a;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #ff8c00;
+      }
+
+      .success {
+        text-align: center;
+        color: #d35400;
+        font-weight: 600;
+        margin-top: 15px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Gym Admission Form</h2>
+
+      <form id="gymForm" onsubmit="return validateForm()">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" onblur="validateName()" />
+        <small id="nameError">Please enter at least 3 characters.</small>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" onblur="validateEmail()" />
+        <small id="emailError">Please enter a valid email address.</small>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" onblur="validatePhone()" />
+        <small id="phoneError"
+          >Please enter a valid 10-digit phone number.</small
+        >
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" onchange="validateAge()" />
+        <small id="ageError">Age must be between 16 and 60.</small>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" onchange="validateHeight()" />
+        <small id="heightError"
+          >Please enter a valid height (100–250 cm).</small
+        >
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" onchange="validateWeight()" />
+        <small id="weightError">Please enter a valid weight (30–200 kg).</small>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <p class="success" id="successMsg">🏋️ Form submitted successfully!</p>
+    </div>
+
+    <script>
+      function validateName() {
+        const name = document.getElementById("name").value.trim();
+        const error = document.getElementById("nameError");
+        if (name.length < 3) {
+          error.style.display = "block";
+          return false;
+        } else {
+          error.style.display = "none";
+          return true;
+        }
+      }
+
+      function validateEmail() {
+        const email = document.getElementById("email").value.trim();
+        const error = document.getElementById("emailError");
+        const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+        if (!pattern.test(email)) {
+          error.style.display = "block";
+          return false;
+        } else {
+          error.style.display = "none";
+          return true;
+        }
+      }
+
+      function validatePhone() {
+        const phone = document.getElementById("phone").value.trim();
+        const error = document.getElementById("phoneError");
+        const pattern = /^[0-9]{10}$/;
+        if (!pattern.test(phone)) {
+          error.style.display = "block";
+          return false;
+        } else {
+          error.style.display = "none";
+          return true;
+        }
+      }
+
+      function validateAge() {
+        const age = document.getElementById("age").value;
+        const error = document.getElementById("ageError");
+        if (age < 16 || age > 60 || age === "") {
+          error.style.display = "block";
+          return false;
+        } else {
+          error.style.display = "none";
+          return true;
+        }
+      }
+
+      function validateHeight() {
+        const height = document.getElementById("height").value;
+        const error = document.getElementById("heightError");
+        if (height < 100 || height > 250 || height === "") {
+          error.style.display = "block";
+          return false;
+        } else {
+          error.style.display = "none";
+          return true;
+        }
+      }
+
+      function validateWeight() {
+        const weight = document.getElementById("weight").value;
+        const error = document.getElementById("weightError");
+        if (weight < 30 || weight > 200 || weight === "") {
+          error.style.display = "block";
+          return false;
+        } else {
+          error.style.display = "none";
+          return true;
+        }
+      }
+
+      function validateForm() {
+        const validName = validateName();
+        const validEmail = validateEmail();
+        const validPhone = validatePhone();
+        const validAge = validateAge();
+        const validHeight = validateHeight();
+        const validWeight = validateWeight();
+        const success = document.getElementById("successMsg");
+
+        if (
+          validName &&
+          validEmail &&
+          validPhone &&
+          validAge &&
+          validHeight &&
+          validWeight
+        ) {
+          success.style.display = "block";
+          setTimeout(() => (success.style.display = "none"), 3000);
+          return false; // prevent actual submission for demo
+        } else {
+          success.style.display = "none";
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

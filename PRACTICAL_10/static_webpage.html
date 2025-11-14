@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart India Hackathon</title>
+    <!-- 
+      Loading Tailwind CSS for all styling.
+      This is the modern way to handle fonts, colors, and layout.
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Using the 'Poppins' font for a modern, clean look */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<!-- 
+  A "unique" background gradient to make the page stand out.
+-->
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 text-gray-200 min-h-screen">
+
+    <!-- 
+      SECTION: Navigation Bar
+      - 'sticky top-0' makes it stay at the top when you scroll.
+      - 'backdrop-blur-lg bg-white/10' gives it a modern "glassy" effect.
+    -->
+    <nav class="sticky top-0 z-50 backdrop-blur-lg bg-white/10 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Brand Name -->
+                <div>
+                    <a href="#" class="text-3xl font-bold text-white hover:text-cyan-300 transition-colors">
+                        SIH 2024
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-6">
+                    <!-- 
+                      These links use '#' as a placeholder. In a real site,
+                      they would link to 'about.html', 'achievements.html', etc.
+                    -->
+                    <a href="#about" class="text-lg text-gray-200 hover:text-white border-b-2 border-transparent hover:border-cyan-300 transition-all">About</a>
+                    <a href="#achievements" class="text-lg text-gray-200 hover:text-white border-b-2 border-transparent hover:border-cyan-300 transition-all">Achievements</a>
+                    <a href="#placements" class="text-lg text-gray-200 hover:text-white border-b-2 border-transparent hover:border-cyan-300 transition-all">Placements</a>
+                    <a href="#themes" class="text-lg text-gray-200 hover:text-white border-b-2 border-transparent hover:border-cyan-300 transition-all">Themes</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+      Main Content Area
+    -->
+    <main class="max-w-4xl mx-auto p-8 mt-10">
+
+        <!-- 
+          Hero Section with Main Heading
+        -->
+        <header class="text-center mb-12">
+            <!--  -->
+            <h1 class="text-6xl font-bold text-white mb-4">
+                Smart India Hackathon
+            </h1>
+            <p class="text-2xl text-cyan-300 font-medium">
+                A Nationwide Movement to Foster Innovation
+            </p>
+        </header>
+
+        <!-- 
+          Content sections with a "glassy" card background
+        -->
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-8 space-y-8">
+
+            <!-- 
+              SECTION: About
+              - Includes Headings (h2), Paragraphs (p), and Formatting
+            -->
+            <section id="about">
+                <h2 class="text-4xl font-semibold text-white mb-4">About SIH</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Smart India Hackathon is a <strong class="text-cyan-300">nationwide initiative</strong> by the Ministry of Education's Innovation Cell. It's designed to provide students with a platform to solve some of the pressing problems we face in our daily lives, and thus inculcate a culture of <em class="text-yellow-300">product innovation</em> and a mindset of problem-solving.
+                    
+                    <!-- 
+                      SECTION: Line Break
+                      Using <br> to force a new line within the same paragraph.
+                    -->
+                    <br><br>
+                    
+                    It has grown into the <strong class="text-cyan-300">world's biggest</strong> open innovation model, offering a unique opportunity for students to work on real-world challenges posed by the Government, private sector organizations, and NGOs.
+                </p>
+            </section>
+
+            <!-- 
+              SECTION: Horizontal Rule
+              - A styled <hr> to visually separate content sections.
+            -->
+            <hr class="border-t-2 border-white/20" />
+
+            <!-- 
+              SECTION: Achievements
+              - More headings, paragraphs, and text formatting.
+            -->
+            <section id="achievements">
+                <h2 class="text-4xl font-semibold text-white mb-4">Achievements</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Over the years, SIH has seen <strong class="text-yellow-300">millions</strong> of students participate. Many of the solutions developed during the hackathon have been implemented by various ministries and private organizations, leading to:
+                </p>
+                <!-- 
+                  This is a more modern way to create lists than just <br>.
+                -->
+                <ul class="list-disc list-inside text-lg text-gray-300 leading-relaxed mt-4 space-y-2">
+                    <li>Improved digital infrastructure for government services.</li>
+                    <li>Innovative solutions for agriculture, healthcare, and education.</li>
+                    <li>A significant boost to the <em class="text-cyan-300">startup ecosystem</em>.</li>
+                </ul>
+            </section>
+
+            <!-- 
+              SECTION: Horizontal Rule
+            -->
+            <hr class="border-t-2 border-white/20" />
+
+            <!-- 
+              SECTION: Placements
+              - Demonstrating different text colors using Tailwind classes.
+            -->
+            <section id="placements">
+                <h2 class="text-4xl font-semibold text-white mb-4">Placements & Opportunities</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    SIH is not just a competition; it's a gateway to incredible opportunities. Top-performing teams and individuals often receive:
+                </p>
+                <ul class="list-disc list-inside text-lg text-gray-300 leading-relaxed mt-4 space-y-2">
+                    <li>
+                        <!-- 
+                          SECTION: Font Color
+                          Using 'text-green-400' class for color.
+                        -->
+                        <span class="text-green-400 font-semibold">Direct placement interviews</span> with leading tech companies.
+                    </li>
+                    <li>Internship opportunities at prestigious organizations.</li>
+                    <li>
+                        <!-- 
+                          SECTION: Font Color
+                          Using 'text-yellow-400' class for color.
+                        -->
+                        <span class="text-yellow-400 font-semibold">Seed funding</span> and incubation support to turn their projects into real startups.
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- 
+      Footer
+    -->
+    <footer class="text-center p-8 mt-12 text-gray-400">
+        <p>&copy; 2024 Smart India Hackathon. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

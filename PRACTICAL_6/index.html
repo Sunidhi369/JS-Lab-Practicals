@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Validation & String Operations</title>
+  </head>
+  <body style="font-family: Arial; margin: 40px">
+    <h2>Email Validation and String Processing</h2>
+
+    <label>Enter your Email:</label><br />
+    <input type="text" id="emailInput" placeholder="example@gmail.com" />
+    <button onclick="validateEmail()">Validate Email</button>
+    <p id="emailResult"></p>
+
+    <hr />
+
+    <label>Enter a Paragraph:</label><br />
+    <textarea
+      id="paragraphInput"
+      rows="4"
+      cols="50"
+      placeholder="Type your paragraph here..."
+    ></textarea
+    ><br />
+    <button onclick="processParagraph()">Process Paragraph</button>
+
+    <p id="vowelCount"></p>
+    <p id="reversedText"></p>
+
+    <script>
+      // Function to validate email using regex and extract details
+      function validateEmail() {
+        const email = document.getElementById("emailInput").value;
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+
+        if (emailPattern.test(email)) {
+          const [username, domain] = email.split("@");
+          document.getElementById(
+            "emailResult"
+          ).innerHTML = `<strong>Valid Email!</strong><br>Username: ${username}<br>Domain: ${domain}`;
+        } else {
+          document.getElementById(
+            "emailResult"
+          ).innerHTML = `<strong>Invalid Email Format!</strong>`;
+        }
+      }
+
+      // Function to count vowels and reverse paragraph
+      function processParagraph() {
+        const paragraph = document.getElementById("paragraphInput").value;
+        const vowels = paragraph.match(/[aeiouAEIOU]/g);
+        const vowelCount = vowels ? vowels.length : 0;
+        const reversed = paragraph.split("").reverse().join("");
+
+        document.getElementById(
+          "vowelCount"
+        ).innerHTML = `Vowel Count: ${vowelCount}`;
+        document.getElementById(
+          "reversedText"
+        ).innerHTML = `Reversed Paragraph: ${reversed}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule Planner </title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1740&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .planner {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      width: 100%;
+      max-width: 450px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8em;
+      color: #6c5ce7;
+      margin-bottom: 20px;
+    }
+
+    .input-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input, textarea, button {
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    input, textarea {
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      outline: none;
+      resize: none;
+    }
+
+    button {
+      background: linear-gradient(90deg, #a29bfe, #81ecec);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 3px 10px rgba(162, 155, 254, 0.4);
+    }
+
+    .schedule-list {
+      margin-top: 20px;
+    }
+
+    .task {
+      background: rgba(248, 249, 250, 0.9);
+      border-left: 5px solid #74b9ff;
+      border-radius: 10px;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .task-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .task-date {
+      font-size: 0.85em;
+      color: #636e72;
+    }
+
+    .delete-btn {
+      background: transparent;
+      border: none;
+      color: #d63031;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 500px) {
+      .planner {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="planner">
+    <h1>My Schedule Planner </h1>
+
+    <div class="input-section">
+      <input type="date" id="task-date" />
+      <textarea id="task-input" rows="2" placeholder="What's your plan for the day? ✨"></textarea>
+      <button id="add-task">Add Task</button>
+    </div>
+
+    <div class="schedule-list" id="schedule-list"></div>
+
+    <footer> Designed with Motivation | Schedule Planner</footer>
+  </div>
+
+  <script>
+    const addBtn = document.getElementById("add-task");
+    const taskInput = document.getElementById("task-input");
+    const taskDate = document.getElementById("task-date");
+    const scheduleList = document.getElementById("schedule-list");
+
+    document.addEventListener("DOMContentLoaded", loadTasks);
+
+    addBtn.addEventListener("click", () => {
+      const dateValue = taskDate.value;
+      const taskValue = taskInput.value.trim();
+
+      if (!dateValue || !taskValue) {
+        alert("Please enter both a date and a task ");
+        return;
+      }
+
+      const task = { text: taskValue, date: dateValue };
+      addTaskToDOM(task);
+      saveTask(task);
+
+      taskInput.value = "";
+      taskDate.value = "";
+    });
+
+    function addTaskToDOM(task) {
+      const taskDiv = document.createElement("div");
+      taskDiv.classList.add("task");
+
+      taskDiv.innerHTML = `
+        <div class="task-info">
+          <strong>${task.text}</strong>
+          <span class="task-date">${new Date(task.date).toDateString()}</span>
+        </div>
+        <button class="delete-btn">✖</button>
+      `;
+
+      scheduleList.appendChild(taskDiv);
+
+      taskDiv.querySelector(".delete-btn").addEventListener("click", () => {
+        taskDiv.remove();
+        deleteTask(task);
+      });
+    }
+
+    function saveTask(task) {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      tasks.push(task);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function loadTasks() {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      tasks.forEach(addTaskToDOM);
+    }
+
+    function deleteTask(taskToDelete) {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      const updatedTasks = tasks.filter(
+        (task) => !(task.text === taskToDelete.text && task.date === taskToDelete.date)
+      );
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    }
+  </script>
+</body>
+</html>

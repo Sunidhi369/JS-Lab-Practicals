@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paradise Hotel Booking</title>
+  <link rel="stylesheet" href="style30.css">
+</head>
+<body>
+  <header>
+    <h1> Paradise Hotel</h1>
+    <button id="themeToggle"> Toggle Theme</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Welcome to Paradise</h2>
+      <p>Luxury redefined — experience comfort, elegance, and hospitality.</p>
+      <button onclick="scrollToForm()">Book Now</button>
+    </div>
+  </section>
+
+  <section id="booking" class="booking-form">
+    <h2>Book Your Stay</h2>
+    <form id="bookingForm">
+      <label>Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label>Room Type:</label>
+      <select id="roomType">
+        <option value="standard">Standard - ₹2000/day</option>
+        <option value="deluxe">Deluxe - ₹3500/day</option>
+        <option value="suite">Suite - ₹5000/day</option>
+      </select>
+
+      <label>Days of Stay:</label>
+      <input type="number" id="days" min="1" required>
+
+      <button type="submit" class="bookBtn">Confirm Booking</button>
+    </form>
+  </section>
+
+  <section class="bill-section">
+    <h2>Booking Details</h2>
+    <div id="billOutput" class="fade"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Paradise Hotel | Designed by Barkha </p>
+  </footer>
+
+  <script src="script30.js"></script>
+</body>
+</html>
